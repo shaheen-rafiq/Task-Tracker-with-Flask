@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>TASK MASTER</h1>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Added</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in tasks %}
+            <tr>
+                <td>{{ task[1] }}</td>
+                <td>{{ task[2] }} </td>
+                <td>
+                    <a href="/delete/{{task[0]}} ">Delete</a>
+                    <br>
+                    <a href="/update/{{task[0]}} ">Update</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    <form action="/" method="post">
+            <input type="text" name="content" id="content">
+            <input type="submit" value="Add Task">
+    </form>
+</div>
+{% endblock %}
