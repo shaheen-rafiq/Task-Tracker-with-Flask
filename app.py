@@ -11,7 +11,7 @@ conn=psycopg2.connect(
     host="localhost",
     database="todo_app",
     user="postgres",
-    password="cheesecake222"
+    password="password"
 )
 cur=conn.cursor()
 # class Todo(db.Model):
